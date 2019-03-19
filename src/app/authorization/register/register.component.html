@@ -1,0 +1,60 @@
+<section class="register-form">
+  <form fxLayout="column"
+        fxLayoutAlign="center center"
+        #registerForm="ngForm"
+        fxLayoutGap="10px"
+        (ngSubmit)="onSubmit(registerForm)">
+    <mat-form-field>
+      <input type="email"
+             matInput
+             placeholder="Your email"
+             ngModel
+             #emailInput="ngModel"
+             name="email"
+             email
+             required>
+      <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid</mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="Should be at least 6 characters long">
+      <input type="password"
+             matInput
+             placeholder="Your password"
+             ngModel
+             #passwordInput="ngModel"
+             name="password"
+             required
+             minlength="6">
+      <mat-hint align="end">{{passwordInput.value?.length}}/6</mat-hint>
+      <mat-error>Field must not be empty</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+             placeholder="Your birtdate"
+             [matDatepicker]="picker"
+             [max]="maxDate"
+             ngModel
+             name="birthdate"
+             required>
+      <mat-datepicker-toggle
+        [for]="picker"
+        matSuffix>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+      <mat-checkbox ngModel
+                    required
+                    name="agree"
+                    color="primary">
+        Agree of terms and conditions
+      </mat-checkbox>
+
+    <button type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="registerForm.invalid">
+      Submit
+    </button>
+  </form>
+</section>
