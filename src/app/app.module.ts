@@ -16,6 +16,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import {StopTrainingComponent} from "./training/current-training/stop-training.component";
 
 
 
@@ -32,7 +33,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     PastTrainingComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent] //when angular doesn`t now where component use
 })
 export class AppModule { }
