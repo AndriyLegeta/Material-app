@@ -33,12 +33,15 @@ export class TrainingService {
       ...this.runningExercise,
       date: new Date(),
       duration: this.runningExercise.duration * (progres/100),
-      calories: this.runningExercise.duration * (progres/100),
+      calories: this.runningExercise.calories * (progres/100),
       state: 'cancelled'});
     this.runningExercise = null;
     this.exerciseChanged.next(null);
   }
   getRaningExercise(){
     return {...this.runningExercise};
+  }
+  getCompletedOrCanceledExercises(){
+    return this.exercises.slice();
   }
 }
