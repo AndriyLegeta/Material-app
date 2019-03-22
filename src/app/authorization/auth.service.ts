@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(private router: Router) { }
 
-  registerUser(authData:AuthData){
+  registerUser(authData: AuthData){
     this.user ={
       email: authData.email,
       userId: Math.round(Math.random()*10000)
@@ -19,7 +19,7 @@ export class AuthService {
     this.authSuccessfully();
   }
 
-    login(authData:AuthData){
+    login(authData: AuthData){
       this.user ={
         email: authData.email,
         userId: Math.round(Math.random()*10000)
