@@ -13,6 +13,7 @@ import {
   MatProgressSpinnerModule,
   MatSelectModule,
   MatSidenavModule,
+  MatSortModule,
   MatTableModule,
   MatTabsModule,
   MatToolbarModule
@@ -38,7 +39,8 @@ import {
     MatSelectModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
 
   ],
   exports: [
@@ -57,7 +59,9 @@ import {
     MatSelectModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
+
 
 
 
